@@ -17,9 +17,6 @@ The software company offers a range of services to meet the needs of businesses 
 
 5. **Remote Support:** Receive remote assistance and support for your software and IT needs.
 
-## Demo
-
-You can check out the live demo of the landing page [here](#).
 
 ## Screenshots
 ![Screenshot (26)](https://github.com/Jivitesh-kanna/codsoft-task-2/assets/93578467/bfa4d924-be6a-47e7-9606-36a92c9006fd)
