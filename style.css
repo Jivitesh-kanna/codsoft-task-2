@@ -1,0 +1,628 @@
+/*===== GERAL =================================================*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-light: hsl(276, 92%, 55%);
+    --Very-light: hsl(304, 100%, 74%);
+    --Very-dark: hsl(208, 49%, 24%);
+    --White: hsl(0, 0%, 100%);
+    --Grayish: hsl(240, 2%, 79%);
+    --Grayish-drop-menu: hsl(0, 0%, 93%);
+    --Very-dark-grayish: hsl(207, 13%, 34%);
+    --Very-dark-grayish2: hsl(206, 13%, 45%);
+    --Very-dark-black: hsl(240, 10%, 16%);
+    --light-gray: hsl(0, 0%, 96%);
+    --Very-light-red: hsl(13, 100%, 72%);
+    --Light-red: hsl(188, 97%, 50%);
+    --Very-dark-gray-blue: hsl(237, 17%, 21%);
+    --Very-dark-desaturated-blue: hsl(237, 23%, 32%);
+    font-size: 62.5%;
+} 
+html {
+    scroll-behavior: smooth;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.6rem;
+    overflow: overlay;    
+    background-color: var(--light-gray);
+}
+h2 {
+    font-size: 3.6rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--White);
+    line-height: 140%;
+}
+h3 {
+    font-size: 2.8rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--Very-dark);
+
+    padding: 6rem 0 3rem;
+}
+h4 {
+    font-size: 1.8rem;
+    color: var(--White);
+
+    padding-bottom: 4rem;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+p {
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.8rem;
+    line-height: 150%;
+    font-weight: 300;
+    text-align: center;
+    color: var(--Very-dark-grayish);
+}
+.wrapper {
+    width: min(37.5rem, 100%);
+    margin-inline: auto;
+    padding-inline: 2.5rem;
+}
+
+/*===== START =================================================*/
+#start {
+    background: url(../images/bg-pattern-intro-mobile.svg) no-repeat, linear-gradient(var(--Very-light-red), var(--Light-red));
+    background-position: 36% 35%;
+    height: 60rem;
+    border-radius: 0 0 0 10rem;
+}
+#start .navigation {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5.5rem;
+}
+#start .navigation button.close-menu,
+.navigation nav {
+    display: none;
+}
+#start header h2 {
+    padding-top: 11.6rem;
+}
+#start header p {
+    font-weight: 400;
+    font-size: 2rem;
+    color: var(--White);
+
+    padding-top: 2.5rem;
+    padding-bottom: 5.2rem;
+}
+#start header a {
+    width: 15rem;
+    height: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 700;
+
+    border-radius: 5rem;
+}
+#start header a:nth-child(1) {
+    background-color: var(--White);
+    color: var(--Very-light);
+    transition: 200ms;
+}
+#start header a:nth-child(1):hover {
+    background-color: var(--Very-light);
+    color: var(--White);
+}
+#start header a:nth-child(2) {
+    border: 1px solid var(--White);
+    color: var(--White);
+    transition: 200ms;
+}
+#start header a:nth-child(2):hover {
+    background-color: var(--White);
+    color: var(--Very-light);
+}
+#start .headerBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+/*===== MENU-EXPENDED =========================================*/
+body.menu-expended {
+    overflow: hidden;
+}
+body.menu-expended> :not(#start, #designedForTheFuture) {
+    /*vai aplicar para todos os elementos exceto os elementos adicionados.*/
+    visibility: hidden;
+}
+body.menu-expended #start .headerBtn {
+    display: none;
+}
+body.menu-expended #start .navigation button.close-menu {
+    display: block;
+}
+body.menu-expended #start .navigation button.open-menu {
+    display: none;
+}
+body.menu-expended #start .navigation nav {
+    position: fixed;
+    top: 12.5rem;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 50rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--White);
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.389);
+}
+.menu-expended .navigation .menu {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    padding-inline: 4rem;
+    padding-top: 3.5rem;
+}
+.navigation .menu a {
+    font-family: 'Overpass', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--Very-dark);
+}
+.menu-expended .navigation nav .line {
+    width: 80%;
+    height: 1px;
+    background-color: var(--Grayish);
+}
+.menu-expended .navigation .loginAndSignUp {
+    padding: 3rem 0 5rem;
+    text-align: center;
+}
+.navigation .loginAndSignUp li:last-child,
+.navigation .loginAndSignUp li:first-child {
+    font-family: 'Overpass', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.navigation .loginAndSignUp li:first-child a {
+    color: var(--Very-dark);
+}
+.menu-expended .loginAndSignUp li:last-child a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--White);
+
+    width: 15rem;
+    height: 5rem;
+    background: linear-gradient(to right, var(--Very-light-red), var(--Light-red));
+
+    border-radius: 5rem;
+
+    margin-top: 2rem;
+
+    transition: 200ms;
+}
+#start .navigation .loginAndSignUp li:last-child a:hover {
+    background: var(--Very-light);
+}
+.menu-expended .navigation .loginAndSignUp li:first-child a:hover {
+    color: var(--primary-light);
+}
+
+/*accordion*/
+.menu-expended nav .menu .accordion-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: pointer;
+}
+.menu .drop {
+    max-height: 0rem;
+    width: 100%;
+    background-color: var(--Grayish-drop-menu);
+
+    line-height: 250%;
+
+    border-radius: .5rem;
+    margin-block: 1.5rem;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+
+    transition: max-height 300ms;
+}
+.menu .drop a {
+    color: var(--Very-dark-grayish);
+
+    transition: 200ms;
+}
+.menu .drop a:hover {
+    color: var(--primary-light);
+}
+/*active*/
+.accordion-item.active .drop {
+    max-height: 25rem;
+    padding-block: 2rem;
+}
+.accordion-item.active a {
+    color: var(--Very-dark-grayish2);
+}
+.accordion-item .accordion-link svg:first-child {
+    display: inline-block;
+}
+.accordion-item .accordion-link svg:last-child {
+    display: none;
+}
+.accordion-item.active .accordion-link svg:first-child {
+    display: none;
+}
+.accordion-item.active .accordion-link svg:last-child {
+    display: inline-block;
+}
+.accordion-item .accordion-link svg {
+    margin-left: 0.5rem;
+}
+
+/*===== DESIGNED FOR THE FUTURE ===============================*/
+#designedForTheFuture {
+    padding-bottom: 27.5rem;     
+}
+#designedForTheFuture header h3 {
+    padding: 10.5rem 0 5rem;
+    transform: none;
+}
+#designedForTheFuture .col-a {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*===== STATE OF THE ART INFRASTRUCTURE =======================*/
+#stateOfTheArtInfrastructure {
+    background: url(../images/bg-pattern-circles.svg) no-repeat, linear-gradient(var(--Very-dark-gray-blue), var(--Very-dark-desaturated-blue));
+    background-position: -12rem -400%;
+    background-size: 60rem, auto, auto;
+
+    border-radius: 0 10rem 0 10rem;    
+}
+#stateOfTheArtInfrastructure .col-a {
+    display: flex;
+    justify-content: center;
+}
+#stateOfTheArtInfrastructure .col-a img {
+    width: min(37.5rem, 100%);
+}
+#stateOfTheArtInfrastructure .phone {
+    transform: translateY(-17rem);
+}
+#stateOfTheArtInfrastructure .col-b div {
+    transform: translateY(-13rem);
+}
+#stateOfTheArtInfrastructure .col-b p {   
+    color: var(--White);    
+    line-height: 190%;
+
+    padding-top: 2.5rem;
+
+}
+.col-a img{
+    height:700px;
+   margin-left: 10px;
+}
+  
+/*===== FREE OPEN SIMPLE ======================================*/
+#freeOpenSimple {
+    padding-block: 10rem;   
+}
+#freeOpenSimple .col-a {
+    display: flex;
+    justify-content: center;
+}
+#freeOpenSimple p{
+    line-height: 190%; 
+}
+
+/*===== FOOTER ===============================================*/
+footer {
+    background-color: var(--Very-dark-black);
+
+    border-radius: 0 10rem 0 0;
+
+    padding-block: 7.5rem;
+}
+footer .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer a.logo {
+    padding-bottom: 8rem;
+}
+footer .menu-footer a {
+    font-size: 1.8rem;
+    line-height: 180%;
+    color: var(--Grayish);   
+}
+footer .menu-footer a::after{
+    content: '';
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: var(--primary-light);
+    transition: 200ms;
+}
+footer .menu-footer a:hover::after {
+      width: 100%;
+}
+footer .menu-footer {
+    padding-bottom: 6rem;
+}
+footer .menu-footer:last-child {
+    padding-bottom: 0;
+}
+
+/*===== BACK TO TOP BUTTON ===================================*/
+#backToTopButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 3rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+    transition: 300ms;
+}
+#backToTopButton.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+#backToTopButton circle {
+    fill: var(--primary-light);
+}
+/*=========================================================*/
+/*===== MEDIA QUERIES =====================================*/
+@media (min-width: 1024px) {
+
+    /*=== GERAL ===============================================*/
+    .wrapper {
+        width: min(112rem, 100%);
+        display: grid;
+    }
+    .col-a {
+        grid-area: A;
+    }
+    .col-b {
+        grid-area: B;
+    }
+
+    /*===== START =======================================================*/
+    #start {
+        background: url(../images/bg-pattern-intro-desktop.svg) no-repeat, linear-gradient(to right, var(--Very-light-red), var(--Light-red));
+        background-position: 30% 40%;
+
+        height: 60rem;
+
+        border-radius: 0 0 0 10rem;
+    }
+    #start .navigation {
+        gap: 6.5rem;
+    }
+    #start .navigation nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .line,
+    #start .navigation button.close-menu,
+    #start .navigation button.open-menu {
+        display: none;
+    }
+    #start .navigation .menu {
+        display: flex;
+        gap: 4rem;
+    }
+    #start .navigation .accordion-link {
+        color: var(--White);
+        cursor: pointer;
+    }
+    #start .loginAndSignUp li:first-child a::after,
+    #start .navigation .accordion-link::after{
+        content: "";
+        width: 0%;
+        height: .2rem;
+        display: block;
+        background-color: #fff;
+        transition: 200ms;
+    }
+    #start .loginAndSignUp li:first-child a:hover::after,
+    #start .navigation .accordion-link:hover::after {
+        width: 100%;
+    }
+    .accordion-item .accordion-link svg path {
+        stroke: var(--White);
+    }
+    #start .navigation .accordion-item .drop {
+        position: absolute;
+
+        width: 17rem;
+
+        transform: translateX(-2rem);
+    }
+    #start .navigation .loginAndSignUp {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+    }
+    #start .navigation .loginAndSignUp a {
+        color: var(--White);
+    }
+    #start .loginAndSignUp li:last-child a {
+        padding-block: 1rem;
+        padding-inline: 4rem;
+        background: var(--White);
+        color: var(--Very-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 5rem;
+    }
+    #start .loginAndSignUp li:last-child a:hover {
+        color: var(--White);
+    }
+    #start .loginAndSignUp li:first-child a {
+        display: inline-block;       
+    }
+    #start header h2{
+        font-size: 5rem;
+    }
+
+    /*===== DESIGNED FOR THE FUTURE ===============================*/
+    #designedForTheFuture{
+        position: relative; 
+
+        overflow: hidden;               
+    }
+    #designedForTheFuture::before{
+        content:url(../images/illustration-editor-desktop.svg);
+        
+        position: absolute;       
+        left: 55%;
+        top: 5rem;       
+       
+    }    
+    #designedForTheFuture .cols{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+		'B A';
+        
+    }
+    #designedForTheFuture .col-b p,
+    #designedForTheFuture .col-b h3{
+        text-align: left;        
+    }
+    #designedForTheFuture .col-a{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /*===== STATE OF THE ART INFRASTRUCTURE =======================*/
+    section#stateOfTheArtInfrastructure {   
+        background: url(../images/bg-pattern-circles.svg) no-repeat, linear-gradient(to right, var(--Very-dark-gray-blue), var(--Very-dark-desaturated-blue));
+        background-size: 92rem, 270rem;
+        background-position: -14rem -48rem;
+        height: 40rem;        
+        padding-bottom: 0;     
+    }   
+    section#stateOfTheArtInfrastructure .wrapper{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        'A B';
+
+        height: 100%;
+    }
+    section#stateOfTheArtInfrastructure .col-a {        
+        position: relative;
+    }
+    #stateOfTheArtInfrastructure .col-a img {
+        width: 54rem;
+
+        position: absolute;
+        left: -5rem;
+        top: -6rem;
+
+        transform: none;
+    }
+    section#stateOfTheArtInfrastructure .col-b {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section#stateOfTheArtInfrastructure .col-b div{
+        width: 50.4rem;  
+        transform: none                  
+    }
+    section#stateOfTheArtInfrastructure h2 {
+        padding-top: 0;
+        text-align: left;
+    }    
+    section#stateOfTheArtInfrastructure .col-b p {
+        color: var(--White);
+        padding-top: 2.5rem;
+        text-align: left;
+    }
+    
+    /*===== FREE OPEN SIMPLE ======================================*/
+    #freeOpenSimple{    
+        padding-block: 20rem;                 
+    }   
+    #freeOpenSimple .wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:'A B';       
+    }
+    #freeOpenSimple .col-a{
+        position: relative;
+    }
+    #freeOpenSimple .col-a img{
+        position: absolute;
+        left: -35rem;
+        top: -7rem;
+        width: 87rem        
+    }
+    #freeOpenSimple .col-b p,
+    #freeOpenSimple .col-b h3{
+        text-align: left;
+    }
+
+    /*===== FOOTER ===============================================*/
+    footer{
+        padding-block: 7rem;     
+    }
+    footer .wrapper{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    footer .menu-footer{
+        padding-bottom: 0;
+    }
+}
